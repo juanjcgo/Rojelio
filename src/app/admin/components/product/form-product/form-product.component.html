@@ -1,0 +1,112 @@
+ <div class="mat-elevation-z8 ">
+    <form [formGroup]="productForm"  (ngSubmit)="addProduct($event)">
+        <mat-card class="shipping-card">
+            <mat-card-header>
+                <mat-card-title>Crear nuevo producto</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field appearance="fill full-width">
+                            <mat-label>Categoria</mat-label>
+                            <mat-select type="text" formControlName="cates">
+                              <mat-option *ngFor="let cate of cates" [value]="cate.name">{{ cate.name }}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        <div *ngIf="catesField.errors && catesField.dirty">
+                            <p *ngIf="catesField.hasError('required')">Este campo es requerido</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field class="full-width">
+                            <mat-label>Nombre</mat-label>
+                            <input type="text" formControlName="name" matInput placeholder="Escribe el nombre">
+                        </mat-form-field>
+                        <div *ngIf="nameField.errors && nameField.dirty">
+                            <p *ngIf="nameField.hasError('required')">Este campo es requerido</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field class="full-width">
+                            <mat-label>Precio</mat-label>
+                            <input type="number" formControlName="price"  matInput placeholder="Escribe el precio">
+                        </mat-form-field>
+                        <div *ngIf="priceField.errors && priceField.dirty">
+                            <p *ngIf="priceField.hasError('required')">Este campo es requerido</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <table class="example-full-width" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <mat-form-field class="full-width">
+                                        <mat-label>Cantidad</mat-label>
+                                        <input type="number" formControlName="quantity"  matInput placeholder="Cantidad dependiendo de la unidad">
+                                        <div *ngIf="quantityField.errors && quantityField.dirty">
+                                            <p *ngIf="quantityField.hasError('required')">Este campo es requerido</p>
+                                        </div>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field class="full-width div">
+                                        <mat-label>Unidad</mat-label>
+                                        <mat-select type="text" formControlName="unit">
+                                            <mat-option>Selecciona una</mat-option>
+                                            <mat-option value="Kilo">Kilos</mat-option>
+                                            <mat-option value="Libra">Libras</mat-option>
+                                            <mat-option value="Unidad">Unidades</mat-option>
+                                        </mat-select>
+                                        <div *ngIf="unitField.errors && unitField.dirty">
+                                            <p *ngIf="unitField.hasError('required')">Este campo es requerido</p>
+                                        </div>
+                                    </mat-form-field>
+                                </td>
+                          </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field class="full-width">
+                            <mat-label>Descripción</mat-label>
+                            <textarea type="text" formControlName="description"  matInput placeholder="Escribe la descripcion"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field class="full-width">
+                            <mat-label>Precio Unidad Compra</mat-label>
+                            <input type="number" value="productForm.value.price" [disabled]="true" formControlName="priceUnitCom"  matInput [value]=" productForm.value.price / productForm.value.quantity ">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field class="full-width">
+                            <mat-label>Precio Unidad Venta</mat-label>
+                            <input type="number" formControlName="priceUnitVen"  matInput placeholder="Escribe el precio unidad de venta">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-label>Imagen</mat-label>
+                        <img *ngIf="(image$ | async) as image" [src]="image" alt="">
+                        <input type="file" (change)="uploadFile($event)">
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="accent" type="submit" [disabled]="productForm.invalid">Agregar</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

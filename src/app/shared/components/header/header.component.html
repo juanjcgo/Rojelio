@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="row between-xs middle-xs header-row">
+            <nav class="nav-bar">
+
+                <button class="icon-movil" mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>dialpad</mat-icon>
+                   
+                </button>
+                <strong>Rojelio</strong>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="/home">
+                        <mat-icon>home</mat-icon>
+                        <span>Inicio</span>
+                    </button>
+                    <button mat-menu-item routerLink="/products">
+                        <mat-icon>ads_click</mat-icon>
+                        <span>Productos</span>
+                    </button>
+                    <button mat-menu-item routerLink="/contact">
+                        <mat-icon>contact_phone</mat-icon>
+                        <span>Contacto</span>
+                    </button>
+                    <button mat-menu-item routerLink="/admin">
+                        <mat-icon>admin_panel_settings</mat-icon>
+                        <span>Admin</span>
+                    </button>
+                </mat-menu>
+
+
+                <!-- <div class="text-web">
+                    <a mat-button routerLink="/home" routerLinkActive="active" >Home</a>
+                    <a mat-button routerLink="/products" routerLinkActive="active" >Products</a> 
+                    <a mat-button routerLink="/contact" routerLinkActive="active" >Contact</a>
+                </div> -->
+                
+            </nav>
+            <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
+                <span class="material-icons">shopping_cart</span>
+                Carrito
+            </a>
+        </div>
+    </mat-toolbar-row>
+    
+</mat-toolbar>
+

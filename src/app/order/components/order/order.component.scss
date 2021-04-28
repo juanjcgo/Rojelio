@@ -1,0 +1,31 @@
+.image {
+    width: 60px;
+}
+
+.itera-product {
+    width: 95%;
+    background: red;
+}
+
+table {
+    width: 1;
+    border-collapse: collapse;
+}
+
+.color {
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgb(68, 2, 189);
+    background: radial-gradient(rgb(241, 238, 238), rgb(241, 238, 247));
+    .header-line {
+        height: 30px;
+        background: rgba(42, 105, 223, 0.301);
+    }
+    button {
+        margin: 5px;
+    }
+    .line {
+        box-shadow: 0 0 8px 0 rgb(68, 2, 189);
+        background: radial-gradient(rgb(241, 238, 238), rgb(241, 238, 247));
+    }
+}

@@ -1,0 +1,157 @@
+.form-general {
+    width: 90%;
+    height: 630px;
+    background-color: rgba(231, 235, 241, 0.514);
+    border-radius: 4px;
+    margin-top: 20px;
+    mat-card-title {
+        text-align: center;
+        color:black;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+    }
+    .area-form {
+        width: 90%;
+        height: 340px;
+        background-color: white;
+        margin:0 auto;
+        padding: 20px;
+        .example-form{
+            width: 100%;
+            float: left;
+            // background: green;
+            .example-full-width {
+                width: 100%;
+            }
+        }
+        .img{
+            display:none;
+            width: 40%;
+            float: left;
+            // background: green;
+            img {
+                width: 50%;
+                margin-top: 50px;
+                margin-left: 30px;
+            }
+        }
+    }
+    .area-inf {
+        width: 90%;
+        height: 120px;
+        background-color:  rgba(231, 235, 241, 0.514);
+        margin:0 auto;
+        padding: 20px;
+        h2 {
+            color: rgb(3, 0, 0);
+            font-size: 22px;
+            text-align: center;
+            padding: 5px;
+        }
+        p {
+            text-align: center;
+            color: rgb(5, 0, 0);
+        }
+    }
+}
+
+@media (min-width: 912px){
+    .form-general {
+        width: auto;
+        height: 500px;
+        background-color: rgba(231, 235, 241, 0.514);
+        border-radius: 4px;
+        margin-top: 20px;
+        mat-card-title {
+            text-align: center;
+            color:black;
+            font-family: Roboto, "Helvetica Neue", sans-serif;
+        }
+        .area-form {
+            width: 65%;
+            height: 440px;
+            background-color: white;
+            float: left;
+            padding: 20px;
+            .example-form{
+                width: 50%;
+                float: left;
+                // background: green;
+                .example-full-width {
+                    width: 100%;
+                }
+            }
+            .img{
+                display: block;
+                width: 50%;
+                float: left;
+                // background: green;
+                width: auto;
+                img {
+                    width: 200px;
+                    margin-top: 30px;
+                    margin-left: 30px;
+                }
+            }
+        }
+        .area-inf {
+            width: 25%;
+            height: 440px;
+            background-color:  rgb(63 81 181);
+            float: left;
+            padding: 20px;
+            h2 {
+                color: white;
+                font-size: 30px;
+                text-align: center;
+                margin-top: 60px;
+                padding: 20px;
+            }
+            p {
+                text-align: center;
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+/* @media (min-width: 1000px){
+    .form-general {
+        width: auto;
+        height: 500px;
+        background-color: rgba(231, 235, 241, 0.514);
+        border-radius: 4px;
+        margin-top: 20px;
+        mat-card-title {
+            text-align: center;
+            color:black;
+            font-family: Roboto, "Helvetica Neue", sans-serif;
+        }
+        .area-form {
+            width: 65%;
+            height: 440px;
+            background-color: white;
+            float: left;
+            padding: 20px;
+        }
+        .area-inf {
+            width: 25%;
+            height: 440px;
+            background-color:  rgb(63 81 181);
+            float: left;
+            padding: 20px;
+            h2 {
+                color: white;
+                font-size: 30px;
+                text-align: center;
+                margin-top: 60px;
+                padding: 20px;
+            }
+            p {
+                text-align: center;
+                color: white;
+            }
+        }
+    }
+} */

@@ -1,0 +1,38 @@
+<div class="container">
+    <mat-card-content>
+        <div class="row">
+            <div class="firter-center">
+                <mat-form-field appearance="standard" class="search-products">
+                    <mat-label>Filtrar por categoria</mat-label>
+                    <mat-select type="text" formControlName="cates">
+                    <mat-option *ngFor="let cate of cates" value="cate.name" (click)="loadProducts(cate.name)">{{ cate.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div class="title-cates">
+                    <h2>{{ cateSelect }}</h2>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <div class="product-grid">
+        <mat-card class="itera-card-product" *ngFor="let prod of products">
+            <mat-card-header>
+                <mat-card-title>{{ prod.name | uppercase }}</mat-card-title>
+                <mat-card-subtitle>{{ prod.priceUnitVen | currency }}</mat-card-subtitle>
+            </mat-card-header>
+            <div class="crop-image">
+                <img class="imagen" [src]="prod.img" alt="Imagen del producto" (click)="detaillsProduct(prod)">
+            </div>
+            <mat-card-content>
+                <strong>Descripcion</strong>
+                <p>{{ prod.description | slice:0:10 }}</p>
+            </mat-card-content>
+            <mat-card-actions class="acction-buttons-product">
+                <button class="button-details-product-web" (click)="detaillsProduct(prod)" mat-raised-button color="basic">Detalles</button>
+                <img class="icon-details-product-movil" src="./assets/icons/view.png" (click)="detaillsProduct(prod)">
+                <button class="button-add-product-movil" (click)="addCart(prod)" mat-raised-button color="primary">Agregar</button>
+                <button class="button-add-product-web" (click)="addCart(prod)" mat-raised-button color="primary">Agregar al carrito</button>
+            </mat-card-actions>
+        </mat-card>
+    </div> 
+</div>

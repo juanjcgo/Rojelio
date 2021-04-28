@@ -1,0 +1,24 @@
+<div class="content">
+    <div class="banner-style">
+        <app-banner></app-banner>
+    </div>
+    <div class="render-cates-style">
+        <div class="product-grid">
+            <mat-card class="itera-card" *ngFor="let cate of cates">
+                <mat-card-header>
+                    <mat-card-title>{{ cate.name | uppercase }}</mat-card-title>
+                </mat-card-header>
+                <div class="crop-image">
+                    <img [src]="cate.img" alt="Imagen del producto">
+                </div>
+                <mat-card-content>
+                    <strong>Descripcion</strong>
+                    <p>{{ cate.description | slice:0:10 }}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="button-cates" mat-raised-button color="primary" (click)="sendProduts(cate.id)">Seleccionar</button>
+                </mat-card-actions>
+            </mat-card>
+        </div> 
+    </div>
+</div>

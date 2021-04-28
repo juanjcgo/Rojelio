@@ -1,0 +1,44 @@
+ <mat-horizontal-stepper>
+     <mat-step>
+         <ng-template matStepLabel>Sus productos</ng-template>
+         <div *ngIf="(buy$ | async) as products">
+            <p *ngIf="products.length === 0">No hay productos</p>
+            <div *ngIf="products.length != 0" class="color">
+                <table class="full-width-table" matSort (matSortChange)="sortData($event)">
+                    <tr class="header-line">
+                      <th mat-sort-header="img">Img</th>
+                      <th mat-sort-header="name">Nombre</th>
+                      <th mat-sort-header="priceUnitVen">Cant</th>
+                      <th mat-sort-header="quantity">Unid</th>
+                      <th mat-sort-header="unit">Precio T</th>
+                    </tr>
+                  
+                    <tr *ngFor="let product of products">
+                      <td><img class="image" [src]="product.img"></td>
+                      <td>{{product.name}}</td>
+                      <td>{{product.quantity}}</td>
+                      <td>{{product.unit }}</td>
+                      <td>{{product.priceTotal | currency}}</td>
+                    </tr>
+                    <tr class="line">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>Total</td>
+                      <td>{{ total | currency }}</td>
+                    </tr>
+                  </table>
+                  <button (click)="createPdf()" mat-raised-button color="primary">Generar PDF</button>
+            </div>
+         </div>
+     </mat-step>
+     <mat-step>
+        <ng-template matStepLabel>Datos personales</ng-template>
+        <h1>Contenido</h1>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>pago</ng-template>
+        <h1>Contenido</h1>
+    </mat-step>
+ </mat-horizontal-stepper>
+

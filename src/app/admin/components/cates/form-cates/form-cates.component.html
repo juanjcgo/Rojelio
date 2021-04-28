@@ -1,0 +1,47 @@
+<div class="mat-elevation-z8 cates-form">
+    <form [formGroup]="catesForm"  (ngSubmit)="addCate($event)">
+        <mat-card class="shipping-card">
+            <mat-card-header>
+                <mat-card-title>Crear nueva categoria</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field class="full-width">
+                            <mat-label>Nombre</mat-label>
+                            <input type="text" formControlName="name" matInput placeholder="Escribe el nombre" value="Joe Doe">
+                        </mat-form-field>
+                        <div *ngIf="nameField.errors && nameField.dirty">
+                            <p *ngIf="nameField.hasError('required')">Este campo es requerido</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field class="full-width">
+                            <mat-label>Descripción</mat-label>
+                            <textarea formControlName="description"  matInput placeholder="Escribe la descripcion"></textarea>
+                        </mat-form-field>
+                        <div *ngIf="descriptionField.errors && descriptionField.dirty">
+                            <p *ngIf="descriptionField.hasError('required')">Este campo es requerido</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <h1>Images</h1>
+                        <img *ngIf="(image$ | async) as image" [src]="image" alt="">
+                        <input type="file" (change)="uploadFile($event)">
+                        <div *ngIf="catesForm.errors">
+                            <p *ngIf="catesForm.hasError('required')">Este campo es requerido</p>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="accent" type="submit" [disabled]="catesForm.invalid">Agregar</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

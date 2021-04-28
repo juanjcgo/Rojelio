@@ -1,0 +1,11 @@
+<mat-card class="footer-row">
+    <mat-card-title class="text-center">SÍGUENOS TAMBIÉN AQUÍ</mat-card-title>
+    <div class="icons-grid">
+        <div  *ngFor="let icon of icons">
+            <img [src]="icon.icon" title="{{ icon.title }}">
+        </div>
+    </div>
+    <mat-card-subtitle class="text-center">Copyright @ 2021 Rojelio 1.0 - Aviso legal, politica de privacidad y de afiliación</mat-card-subtitle>
+    <mat-card-subtitle class="text-center">Web diseñada con Angular 10 Framework y hospedada en Firebase</mat-card-subtitle>
+</mat-card>
+    

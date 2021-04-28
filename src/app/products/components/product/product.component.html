@@ -1,0 +1,14 @@
+<div class="products">
+    <div class="detaills-img">
+        <span class="material-icons icon-reply" (click)="back()">reply</span>
+        <span>Detalle</span>
+        <img [src]="product.img" alt="Imagen del producto">
+    </div>
+    <div class="detaills-products">
+        <ul>
+            <li><strong>{{ product.name }}</strong></li>
+            <li>{{ product.priceUnitVen | currency}}</li>
+            <p>{{ product.description }}</p>
+        </ul>
+    </div>
+</div>

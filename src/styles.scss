@@ -1,1 +1,290 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    width: 100%;
+    /* background: red; */
+    padding: 0px;
+    .firter-center{ /* Contenedor de filtro por categoria de productos */
+        width: auto;
+        margin:0 auto;
+        /* background: red; */
+        .search-products { /* Filtro por categoria de productos */
+            float: left;
+        }
+        .title-cates { /* Titulo de categoria en el componente producto */
+            width: auto;
+            float: left;
+            margin-top: 26px;
+            margin-left: 5px;
+            /* background: green; */
+        }
+    }
+    .product-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px 3px;
+        margin-top: 10px;
+        .itera-card {
+            height: 200px;
+            /* background: green; */
+        }
+        .itera-card-product {
+            height: 235px;
+            /* background: green; */
+            padding: 5px;
+        }
+        .crop-image {
+            // background: red;
+            height: 80px; 
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            /* background: yellow; */
+            img {
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* Centrar la imagen */
+                max-width: 100%;  /* Tamaño de la imagen */
+            }
+        }
+    }
+    .button-cates {
+        width: 100%;
+    }
+    .acction-buttons-product {
+        width: 90%;
+        height: 30px;
+        margin:0 auto;
+        padding: 0;
+        /* background: rebeccapurple; */
+        .icon-details-product-movil {
+            display: block;
+            width: 52px;
+            float: left;
+        }
+        .button-details-product-web {
+            display: none;
+        }
+        .button-add-product-movil {
+            display: block;
+            float: left;
+        }
+        .button-add-product-web {
+            display: none;
+            float: left;
+        }
+    }
+}
+
+
+.icon-movil {
+    display: block;
+}
+
+.text-web {
+    display: none;
+}
+
+
+
+@media (min-width: 576px){
+    .icon-movil {
+        display:  none;
+    }
+    
+    .text-web {
+        display: block;
+    }
+}
+
+@media (min-width: 576px){
+    .container {
+        max-width: 1110px;
+        padding-right: 16px;
+        padding-left: 16px;
+        .firter-center{ /* Contenedor de filtro por categoria de productos */
+            width: 100%;
+            margin-left: 10px;
+            /* background: red; */
+            .search-products { /* Filtro por categoria de productos */
+                width: 32%;
+                float: left;
+            }
+            .title-cates { /* Titulo de categoria en el componente producto */
+                width: auto;
+                float: left;
+                margin-top: 26px;
+                margin-left: 20px;
+                /* background: green; */
+            }
+        }
+        .product-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px 10px;
+            margin-top: 10px;
+            .itera-card {  /* Targeta de cates deonde este *ngFor */
+                height: 300px;
+                /* background: green; */
+            }
+            .itera-card-product {  /* Targeta de productos deonde este *ngFor */
+                height: 330px;
+                /* background: rgb(167, 20, 20); */
+                padding: 20px;
+            }
+            .crop-image {
+                /* background: rgb(38, 0, 255); */
+                height: 150px; 
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                /* background: yellow; */
+                margin-bottom: 20px;
+                img {
+                    position: absolute;
+                    top: 60%;
+                    left: 50%;
+                    transform: translate(-50%, -50%); /* Centrar la imagen */
+                    max-width: 100%;  /* Tamaño de la imagen */
+                }
+            }
+        }
+        .button-cates {  /* button de seleccionar el categorias */
+            width: 100%;
+        }
+        .acction-buttons-product { /* Acciones del componente products */
+            width: 240px;
+            height: 30px;
+            margin:0 auto;
+            padding: 0;
+            /* background: rebeccapurple; */
+            .icon-details-product-movil {
+                display: none;
+            }
+            .button-add-product-movil {
+                display: none;
+            }
+            .button-details-product-web {
+                display: block;
+                float: left;
+            }
+            .button-add-product-web {
+                width: auto;
+                display: block;
+                float: left;
+            }
+        }
+    }
+}
+
+/* Estilos generales para todos los componentes */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.centrado{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center {
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+
+.text-center-black {
+    text-align: center;
+    color: black;
+    margin-top: 5px;
+}
+
+.img-view {
+    width: 300px;
+    border-radius: 4px;
+}
+
+.full-width-table {
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.icons {
+    width: 35px;
+    color:azure;
+}
+
+/* ________________________Login & Register____________________________ */
+
+.content-auth {
+    width: auto;
+    height: 390px;
+    margin:0 auto;
+    margin-top: 20px;
+    border-radius: 4px;
+    background: #ffd104;
+    .card-auth {
+        width: auto;
+        height: 350px;
+    }
+    img {
+        width: 80px;
+    }
+}
+
+@media (min-width: 576px){
+    .content-auth {
+        width: 400px;
+        height: 390px;
+        margin:0 auto;
+        margin-top: 20px;
+        border-radius: 4px;
+        background: #ffd104;
+        .card-auth {
+            width: auto;
+            height: 350px;
+        }
+        img {
+            width: 100px;
+        }
+    }
+}
+
+@media (min-width: 800px){
+    .content-auth {
+        width: 600px;
+        height: 390px;
+        margin:0 auto;
+        margin-top: 20px;
+        border-radius: 4px;
+        background: #ffd104;
+        .card-auth {
+            width: auto;
+            height: 350px;
+        }
+        img {
+            width: 100px;
+        }
+    }
+}
+
+/* ________________Animaciones para Home, Cates___________________ */
+
+
+
+.itera-card:hover .crop-image {
+    -webkit-transform:scale(1.1);
+    transform:scale(1.1);}
+.itera-card {
+    overflow:hidden;
+}
+
+/* _______________________Productos___________________________ */
+
+/* .imagen:hover {-webkit-transform: rotate(360deg);transform: rotate(360deg);} */
+.imagen:hover {
+    filter: opacity(0.5);
+}
