@@ -2,7 +2,7 @@
     <div class="banner-style">
         <app-banner></app-banner>
     </div>
-    <div class="render-cates-style">
+    <div class="render-cates-style contend-web">
         <div class="product-grid">
             <mat-card class="itera-card" *ngFor="let cate of cates">
                 <mat-card-header>
@@ -21,4 +21,19 @@
             </mat-card>
         </div> 
     </div>
+
+    <div class="contend-movil">
+        <div class="list" *ngFor="let cate of cates" (click)="sendProduts(cate.id)">
+          <div class="avatar">
+            <img [src]="cate.img">
+          </div>
+          <div class="contend">
+            <strong>{{ cate.name | uppercase}}</strong>
+            <p>{{ cate.description | slice:0:10}}</p>
+          </div>
+          <button mat-icon-button aria-label="Example icon-button with a menu">
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </div>
+      </div>
 </div>

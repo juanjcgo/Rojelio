@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Buy, Products } from './../../../models/products.model';
+import { DialogData } from './../../../models/buy.models';
 
 
 @Injectable({
@@ -15,23 +16,18 @@ export class CartService {
 
   constructor() { }
 
-  addCart(product: Products) {
-    const id = this.findProduct(product.id);
+  addCart(buy: Buy) {
+    const id = this.findProduct(buy.id);
     console.log('ID');
     console.log(id);
-    if (id === -1) {
+    if (id === -1 || this.buy === []) {
       console.log('no lo encontro');
-      this.registerProduct(product);
+      this.registerProduct(buy);
       console.log(this.buy);
     }
-    else if (this.buy === [] ) {
-      console.log('esta vacio');
-      this.registerProduct(product);
-      console.log(this.buy);
-    }
-    if (id > -1) {
-      this.buy[id].quantity += 1;
-      this.buy[id].priceTotal = product.priceUnitVen * this.buy[id].quantity;
+    else if (id > -1) {
+      this.buy[id].quantity = buy.quantity;
+      this.buy[id].priceTotal = buy.priceTotal;
       console.log(this.buy);
     }
     this.cart.next(this.buy);
@@ -49,17 +45,7 @@ export class CartService {
       return -1;
     }
 
-    registerProduct(product: Products) {
-        console.log('No hay nada');
-        const buy = {
-          id: product.id,
-          name: product.name,
-          priceUnitVen: product.priceUnitVen,
-          priceTotal: product.priceUnitVen,
-          quantity: 1,
-          unit: product.unit,
-          img: product.img
-        };
+    registerProduct(buy: Buy) {
         this.buy = [...this.buy, buy];
         console.log(this.buy);
     }

@@ -5,11 +5,13 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="create-product">Crear productos</a>
-      <a mat-list-item routerLink="products">Listar productos</a>
-      <a mat-list-item routerLink="/">dashboard</a>
-      <a mat-list-item routerLink="cates">Ver categorias</a>
-      <a mat-list-item routerLink="create-cate">Crear categorias</a>
+      <a mat-list-item routerLink="/admin" (click)="drawer.toggle()">Perfil</a>
+      <a mat-list-item routerLink="/admin" (click)="drawer.toggle()">Dashboard</a>
+      <a mat-list-item routerLink="products" (click)="drawer.toggle()">Listar productos</a>
+      <a mat-list-item routerLink="create-product" (click)="drawer.toggle()">Crear productos</a>
+      <a mat-list-item routerLink="cates" (click)="drawer.toggle()">Ver categorias</a>
+      <a mat-list-item routerLink="create-cate" (click)="drawer.toggle()">Crear categorias</a>
+      <a mat-list-item routerLink="/" (click)="drawer.toggle()">Vista cliente</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -22,8 +24,10 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Rojelio</span>
-      <img src="assets\icons\logout-2.png" (click)="logout()" class="icons">
+      <span (click)="drawer.toggle()">StoreRojelio</span>
+      <button mat-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+    </button>
     </mat-toolbar>
 
       <router-outlet></router-outlet>

@@ -13,12 +13,12 @@
                 </div>
             </div>
         </div>
-    </mat-card-content>
+    </mat-card-content> 
     <div class="product-grid">
         <mat-card class="itera-card-product" *ngFor="let prod of products">
             <mat-card-header>
-                <mat-card-title>{{ prod.name | uppercase }}</mat-card-title>
-                <mat-card-subtitle>{{ prod.priceUnitVen | currency }}</mat-card-subtitle>
+                <mat-card-title>{{ prod.name | uppercase }}</mat-card-title> 
+                <mat-card-subtitle>{{ prod.priceUnitVen | currency }} - {{ prod.unit }}</mat-card-subtitle>
             </mat-card-header>
             <div class="crop-image">
                 <img class="imagen" [src]="prod.img" alt="Imagen del producto" (click)="detaillsProduct(prod)">
@@ -30,8 +30,24 @@
             <mat-card-actions class="acction-buttons-product">
                 <button class="button-details-product-web" (click)="detaillsProduct(prod)" mat-raised-button color="basic">Detalles</button>
                 <img class="icon-details-product-movil" src="./assets/icons/view.png" (click)="detaillsProduct(prod)">
-                <button class="button-add-product-movil" (click)="addCart(prod)" mat-raised-button color="primary">Agregar</button>
-                <button class="button-add-product-web" (click)="addCart(prod)" mat-raised-button color="primary">Agregar al carrito</button>
+                <div class="add-carr">
+                    <div class="add-carr"> 
+                        <div class="add-carr">
+                            <button mat-raised-button (click)="openDialog(prod)" class="button-add-product-movil" 
+                                matBadgeColor="accent" color="primary"  >
+                                Agregar
+                            </button>
+                            <button   class="button-add-product-web" (click)="openDialog()" mat-raised-button color="primary">Agregar al carrito</button>
+                        </div>
+                        <!-- <div class="add-carr" *ngIf="c.id != prod.id || c.length > 0">
+                            <button mat-raised-button class="button-add-product-movil" color="primary" 
+                                matBadge="0"  matBadgeColor="accent" (click)="addCart(prod)">
+                                Agregar
+                            </button>
+                            <button class="button-add-product-web" (click)="addCart(prod)" mat-raised-button color="primary">Agregar al carrito</button>
+                        </div> -->
+                    </div>
+                </div>
             </mat-card-actions>
         </mat-card>
     </div> 

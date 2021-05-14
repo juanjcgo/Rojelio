@@ -22,6 +22,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('es lo que trae el observable');
+    console.log(this.total$);
   }
 
 }

@@ -1,4 +1,4 @@
-<div class="contend">
+<div class="contend-web">
   <button mat-button routerLink="../create-cate">Crear categoria</button>
   <div class="mat-elevation-z8 cates-table">
     <table mat-table [dataSource]="cates" class="full-width-table" >
@@ -34,5 +34,24 @@
                   [pageSize]="10"
                   [pageSizeOptions]="[5, 10, 25, 100]">
     </mat-paginator>
+  </div>
+</div>
+
+<div class="contend-movil">
+  <div class="list" *ngFor="let cate of cates">
+    <div class="avatar">
+      <img [src]="cate.img">
+    </div>
+    <div class="contend">
+      <strong>{{ cate.name }}</strong>
+      <p>{{ cate.description }}</p>
+    </div>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="updateCate(cate)">Editar</button>
+      <button mat-menu-item (click)="deleteCate(cate.id)">Borrar</button>
+    </mat-menu>
   </div>
 </div>

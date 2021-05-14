@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Hola</h1>
+<div mat-dialog-content>
+    <div [formGroup]="buyForm">
+        <p>Cuanto/a {{data.name}} quieres?</p>
+        <mat-form-field>
+            <mat-label>Escribe la cantidad</mat-label>
+            <input matInput type="number" formControlName="quantity">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Unidad</mat-label>
+            <mat-select type="text" formControlName="unit">
+                <mat-option>Selecciona una</mat-option>
+                <mat-option value="Kilo">Kilos</mat-option>
+                <mat-option value="Libra">Libras</mat-option>
+                <mat-option value="Unidad">Unidades</mat-option>
+                <mat-option value="Docena">Docenas</mat-option>
+                <mat-option value="Litro">Litros</mat-option>
+                <mat-option value="Litro">Manojos</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="false">No Thanks</button>
+  <button mat-button [mat-dialog-close]="buyForm.value" cdkFocusInitial>Ok</button>
+</div>

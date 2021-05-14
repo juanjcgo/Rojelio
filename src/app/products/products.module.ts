@@ -6,18 +6,22 @@ import { SharedModule } from './../shared/shared.module';
 import { ProductsRoutingModule } from './products-routing.module';
 import { MaterialModule } from './../material/material.module';
 import { CatesComponent } from './components/cates/cates.component';
+import { DialogOverviewExampleDialog } from './components/products/products.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     ProductComponent,
-    CatesComponent
+    CatesComponent,
+    DialogOverviewExampleDialog
   ],
   imports: [
     CommonModule,
     SharedModule,
     ProductsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductsModule { }

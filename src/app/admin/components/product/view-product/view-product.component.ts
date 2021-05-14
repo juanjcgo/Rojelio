@@ -17,6 +17,7 @@ export class ViewProductComponent implements OnInit {
   cateForm: FormGroup;
   displayedColumns = ['img', 'name', 'priceUnitVen', 'quantity', 'actions'];
   product: Products;
+  detaill = false;
 
   constructor(
     private productsService: ProductsService,
@@ -82,6 +83,15 @@ export class ViewProductComponent implements OnInit {
     };
     console.log('Estos son las claves', ids);
     this.productsService.deleteProduct(ids);
+  }
+
+  detaills() {
+    if (this.detaill == false){
+      this.detaill = true;
+    }
+    else{
+      this.detaill = false;
+    }
   }
 
 }

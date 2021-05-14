@@ -1,4 +1,4 @@
-<div class="mat-elevation-z8 ">
+<div class="mat-elevation-z8">
     <button mat-button routerLink="../create-product">Crear Producto</button>
     <form [formGroup]="cateForm">
         <mat-card class="shipping-card">
@@ -20,7 +20,7 @@
             </mat-card-content>
         </mat-card>
     </form>
-    <div class="mat-elevation-z8 product-table">
+    <div class="mat-elevation-z8 product-table contend-web">
       <table mat-table [dataSource]="products" class="full-width-table">
 
         <ng-container matColumnDef="img">
@@ -61,3 +61,30 @@
       </mat-paginator>
     </div>
 </div>
+
+<div class="contend-movil" *ngFor="let prod of products">
+  <div class="list" (click)="detaills()">
+    <div class="avatar">
+      <img [src]="prod.img">
+    </div>
+    <div class="contend">
+      <strong>{{ prod.name }}</strong>
+      <p>Precio de Venta {{ prod.priceUnitVen }} - {{ prod.unit }}</p>
+    </div>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="updateProduct(prod)">Editar</button>
+      <button mat-menu-item (click)="deleteProduct(prod)">Borrar</button>
+    </mat-menu>
+    </div>
+    <div *ngIf="detaill == true" class="detaills">
+      <table >
+        <tr>
+          <td><strong>Compra: </strong>{{ prod.priceUnitCom}}</td>
+          <td><strong>Cant: </strong>{{ prod.quantity}} - {{ prod.unit }} </td>
+        </tr>
+      </table>
+    </div>
+  </div>

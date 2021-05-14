@@ -1,3 +1,47 @@
+/* Estilos para movil y web en admin categorias y produstos */
+.contend-web {
+    display: none;
+}
+
+.contend-movil {
+    display: block;
+    width: auto;
+    .list {
+      width: 90%;
+      height: 45px;
+      background: white;
+      padding: 18px;
+      border-bottom: 1px solid rgb(84, 84, 87);
+      .avatar > img {
+        width: 50px;
+        height: 50px;
+        /* background: green; */
+        border-radius: 50px;
+        float: left;
+        margin-right: 12px;
+      }
+      .contend {
+        width: 65%;
+        height: 50px;
+        /* background: yellow; */
+        float: left;
+      }
+    }
+    .list:hover {
+      background: linear-gradient(to right, white,rgba(174, 173, 175, 0.993), );
+    }
+}
+  
+  @media (min-width: 576px){
+    .contend-web {
+      display: block;
+    }
+    .contend-movil {
+      display: none;
+    }
+  }
+
+
 .container {
     width: 100%;
     /* background: red; */
@@ -22,13 +66,14 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 15px 3px;
         margin-top: 10px;
+        width: auto;
         .itera-card {
             height: 200px;
             /* background: green; */
         }
         .itera-card-product {
-            height: 235px;
-            /* background: green; */
+            height: auto;
+           /*  background: green; */
             padding: 5px;
         }
         .crop-image {
@@ -44,6 +89,11 @@
                 left: 50%;
                 transform: translate(-50%, -50%); /* Centrar la imagen */
                 max-width: 100%;  /* Tamaño de la imagen */
+            }
+            .add-carr {
+                position: absolute;
+                top: 0px;
+                right: 0px;
             }
         }
     }
@@ -93,6 +143,10 @@
     
     .text-web {
         display: block;
+        text-decoration: none;
+        .active {
+            background-color: rgb(10, 6, 201);
+        }
     }
 }
 
@@ -100,7 +154,7 @@
     .container {
         max-width: 1110px;
         padding-right: 16px;
-        padding-left: 16px;
+        padding-left: 30px;
         .firter-center{ /* Contenedor de filtro por categoria de productos */
             width: 100%;
             margin-left: 10px;
@@ -121,7 +175,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 10px 10px;
-            margin-top: 10px;
+            margin-top: 30px;
             .itera-card {  /* Targeta de cates deonde este *ngFor */
                 height: 300px;
                 /* background: green; */

@@ -18,6 +18,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatSortModule,
     MatGridListModule,
     MatMenuModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -59,7 +61,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatSortModule,
     MatGridListModule,
     MatMenuModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }
